@@ -1,0 +1,16 @@
+sequenceDiagram
+    participant Client as User / Frontend
+    participant API as REST API (Presentation Layer)
+    participant Business as PlaceService (Business Logic Layer)
+    participant DB as PlaceRepository (Persistence Layer)
+
+    %% Début du scénario
+    Client->>API: GET /places?page=1&limit=20
+    API->>API: Validate query params (page, limit)
+    API->>Business: get_places(page=1, limit=20)
+    Business->>DB: fetch_places(offset=0, limit=20)
+    DB-->>Business: List<Place>
+    Business->>Business: Transform Place to PlaceDTO (serialization)
+    Business-->>API: List<PlaceDTO>
+    API->>API: Format response (JSON)
+    API-->>Client: 200 OK + JSON (List of places)
