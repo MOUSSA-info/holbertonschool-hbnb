@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ##HBnB Evolution – Technical Documentation (PART 1)
 This repository contains the technical documentation for the architecture and design of the HBnB Evolution application, a project inspired by AirBnB.
 The goal of this first phase is to provide a clear and detailed overview of the system prior to development, including:
@@ -14,6 +15,50 @@ This documentation serves as a reference for the entire team, ensures project co
 
 
 
+=======
+# HBnB Evolution - Documentation Technique
+
+## Architecture Globale
+![Diagramme des Packages](API-Architecture.mmd)
+
+### Couche Présentation
+- **Responsabilités** : 
+  - Gestion des routes API (Flask)
+  - Sérialisation/Désérialisation JSON
+  - Gestion des codes HTTP
+- **Composants** :
+  - `api/places.py` : Endpoints pour les lieux
+  - `serializers.py` : Conversion objets ↔ JSON
+
+### Couche Métier
+- **Responsabilités** :
+  - Validation des données métier
+  - Implémentation des règles de gestion
+  - Gestion des relations entre entités
+- **Composants** :
+  - `models/place.py` : Modèle Place avec méthodes métier
+  - `services/place_service.py` : Logique de création des lieux
+
+### Couche Persistence
+- **Responsabilités** :
+  - Abstraction de la base de données
+  - Implémentation du CRUD
+  - Gestion des transactions
+- **Composants** :
+  - `repositories/place_repository.py` : Accès DB pour les lieux
+  - `database.py` : Configuration SQLAlchemy
+
+---
+
+## Modèle de Domaine
+![Diagramme de Classes](Classe-UML.md)
+
+### Entité Place
+
+
+
+
+>>>>>>> 4276961 (update)
 
 # THE DIAGRAMS 
 
@@ -26,11 +71,15 @@ This documentation serves as a reference for the entire team, ensures project co
     ── user_registration.png
 ![Alt text]()
 
+<<<<<<< HEAD
     ── place_creation.png
 ![Alt text]()
     ── add_review.png
 ![Alt text]()
     ── fetch_places.png 
+=======
+── place_creation.png
+>>>>>>> 4276961 (update)
 ![Alt text]()
 
   --diagram task 01
