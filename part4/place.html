@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Détails du lieu</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <img src="images/logo.png" alt="Logo" class="logo" />
+    <a href="index.html" class="login-button">Déconnexion</a>
+  </header>
+
+  <main>
+    <section id="place-details">
+      <!-- Le détail complet sera inséré ici via JS -->
+    </section>
+
+    <section id="add-review" style="display:none;">
+      <h3>Ajouter un avis</h3>
+      <form id="review-form" class="add-review form">
+        <textarea name="comment" placeholder="Votre commentaire" required></textarea>
+        <input type="number" name="rating" min="1" max="5" placeholder="Note (1 à 5)" required />
+        <button type="submit">Envoyer</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 - Tous droits réservés</p>
+  </footer>
+
+  <script src="js/place_detail.js"></script>
+</body>
+</html>
+ 

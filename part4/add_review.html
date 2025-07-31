@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ajouter un avis</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <img src="images/logo.png" alt="Logo" class="logo" />
+    <a href="index.html" class="login-button">Déconnexion</a>
+  </header>
+
+  <main>
+    <h2>Ajouter un avis</h2>
+    <form id="review-form" class="add-review form">
+      <textarea name="comment" placeholder="Votre commentaire" required></textarea>
+      <input type="number" name="rating" min="1" max="5" placeholder="Note (1-5)" required />
+      <button type="submit">Envoyer votre avis</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>© 2025 - Tous droits réservés</p>
+  </footer>
+
+  <script src="js/add_review.js"></script>
+</body>
+</html>
