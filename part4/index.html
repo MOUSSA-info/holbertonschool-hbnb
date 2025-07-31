@@ -1,52 +1,114 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bienvenue - Liste des lieux</title>
-  <link rel="stylesheet" href="css/main.css" /> <!-- ton CSS modulaire avancé -->
-  <!-- Ajoute une police Google pour un rendu plus moderne -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <!-- META FONDAMENTAUX -->
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>HBNB • Lieux d’exception à réserver</title>
+  <meta name="description"
+        content="Découvrez et réservez des hébergements uniques dans le monde entier : prix, photos, commodités et avis authentiques.">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, viewport-fit=cover"> <!-- mobile & Core Web Vitals[60][66] -->
+
+  <!-- SEO & RÉSEAUX SOCIAUX -->
+  <link rel="canonical" href="https://example.com/">
+  <meta property="og:title" content="HBNB • Lieux d’exception à réserver">
+  <meta property="og:description"
+        content="Liste d’hébergements, filtres par prix et avis clients.">
+  <meta property="og:image" content="images/og-cover.jpg">
+  <meta property="og:type" content="website">
+  <meta name="robots" content="index,follow"> <!-- gouvernance AI Overviews[74] -->
+
+  <!-- MANIFESTE PWA & FAVICONS -->
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+
+  <!-- PRECONNECT/PRIORITY HINTS -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preload" as="image" href="images/hero.webp" fetchpriority="high">
+
+  <!-- CSS PRINCIPAL -->
+  <link rel="stylesheet" href="css/main.css">
+
+  <!-- SCRIPTS MODULES DEFER (meilleures perf) -->
+  <script type="module" src="js/index.js" defer></script>
 </head>
-<body class="flex flex-col min-h-screen bg-gray-50 font-sans text-gray-700">
 
-<header class="sticky top-0 z-50 bg-gradient-to-r from-purple-600 to-indigo-600 shadow-md p-6 flex items-center justify-between">
-  <div class="flex items-center gap-4">
-    <img src="images/logo.png" alt="Logo" class="h-12 w-auto" />
-    <h1 class="text-2xl font-semibold text-white">Liste des lieux</h1>
-  </div>
-  <nav>
-    <a href="index.html" id="login-link" class="btn btn-secondary text-white">Se connecter</a>
-  </nav>
-</header>
+<body>
+  <!-- BARRE DE PROGRESSION LCP -->
+  <div class="reading-progress" aria-hidden="true"></div>
 
-<main class="flex-1 container mx-auto px-4 py-8">
-  <!-- Barre de filtre avancée -->
-  <section class="mb-8">
-    <div class="flex items-center space-x-4">
-      <label for="price-filter" class="font-semibold">Filtrer par prix :</label>
-      <select id="price-filter" class="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400 transition">
-        <option value="all">Tous</option>
-        <option value="10">Jusqu'à 10€</option>
-        <option value="50">Jusqu'à 50€</option>
-        <option value="100">Jusqu'à 100€</option>
-      </select>
+  <header class="site-header">
+    <div class="container flex justify-between items-center">
+      <a href="/" class="logo-link" aria-label="Accueil HBNB">
+        <img src="images/logo.png" class="logo" alt="HBNB logo">
+      </a>
+
+      <!-- Composant réutilisable : bouton connexion / profil -->
+      <nav aria-label="Accès utilisateur">
+        <ul class="user-nav">
+          <li id="login-item">
+            <a href="login.html" id="login-link" class="btn btn-secondary">
+              <span class="icon-enter" aria-hidden="true"></span>Se connecter
+            </a>
+          </li>
+          <li id="profile-item" class="hidden">
+            <a href="profil.html" class="btn btn-secondary">
+              <span class="icon-user" aria-hidden="true"></span>Mon profil
+            </a>
+          </li>
+        </ul>
+      </nav>
     </div>
-  </section>
+  </header>
 
-  <!-- Conteneur dynamique pour la liste -->
-  <section id="places-container" class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-    <!-- Les cartes s'afficheront ici avec JS -->
-  </section>
-</main>
+  <main id="content" class="container" tabindex="-1">
+    <!-- FILTRES -->
+    <section class="filters" aria-labelledby="filters-heading">
+      <h2 id="filters-heading" class="sr-only">Filtres de recherche</h2>
+      <label for="price-filter">Prix max :</label>
+      <select id="price-filter" name="price-filter">
+        <option value="all">Tous</option>
+        <option value="10">10 €</option>
+        <option value="50">50 €</option>
+        <option value="100">100 €</option>
+      </select>
 
-<footer class="bg-gray-800 text-gray-200 text-center p-4 mt-auto">
-  &copy; 2025 - Tous droits réservés
-</footer>
+      <label for="country-filter">Pays :</label>
+      <select id="country-filter" name="country-filter">
+        <option value="all">Tous</option>
+      </select>
+    </section>
 
-<!-- Scripts JS -->
-<script src="js/auth.js"></script>
-<script src="js/places.js"></script>
+    <!-- LISTE DES LIEUX -->
+    <section aria-labelledby="places-heading">
+      <h2 id="places-heading" class="sr-only">Liste des lieux</h2>
+      <div id="places-container" class="places-grid" aria-live="polite">
+        <!-- Cartes générées dynamiquement -->
+        <p class="loading" id="loader">
+          <span class="spinner" role="status" aria-label="Chargement…"></span>
+        </p>
+      </div>
+    </section>
+  </main>
 
+  <footer class="site-footer">
+    <div class="container text-center">
+      <p>© 2025 HBNB — Tous droits réservés</p>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Basculer thème sombre/clair"></button>
+    </div>
+  </footer>
+
+  <!-- SERVICE WORKER POUR PWA (offline + perf) -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js', { scope: '/' })
+          .catch(err => console.error('SW fail', err));
+      });
+    }
+  </script>
 </body>
+
 </html>
