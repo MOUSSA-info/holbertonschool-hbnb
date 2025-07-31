@@ -1,0 +1,400 @@
+/* Airbnb Style - Hero Section */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-container {
+    display: flex;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    height: 100vh;
+}
+
+/* Search Form Styles */
+.search-form {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 20px 0 0 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
+}
+
+.search-form h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #222222;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.search-form p {
+    font-size: 1.1rem;
+    color: #717171;
+    margin-bottom: 40px;
+    line-height: 1.5;
+}
+
+.search-form-content {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #222222;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.form-group input,
+.form-group select {
+    padding: 16px 20px;
+    border: 1px solid #DDDDDD;
+    border-radius: 12px;
+    font-size: 1rem;
+    background: #FFFFFF;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #FF385C;
+    box-shadow: 0 0 0 2px rgba(255, 56, 92, 0.1);
+}
+
+.form-group input::placeholder {
+    color: #717171;
+}
+
+.date-group,
+.guests-group {
+    display: flex;
+    gap: 15px;
+}
+
+.date-group .form-group,
+.guests-group .form-group {
+    flex: 1;
+}
+
+.search-button {
+    background: linear-gradient(135deg, #FF385C 0%, #E31C5F 100%);
+    color: white;
+    border: none;
+    padding: 18px 32px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.search-button:hover {
+    background: linear-gradient(135deg, #E31C5F 0%, #D70466 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(255, 56, 92, 0.3);
+}
+
+/* Hero Image Styles */
+.hero-image {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0 20px 20px 0;
+}
+
+.kitchen-background {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Kitchen Island */
+.kitchen-background::before {
+    content: '';
+    position: absolute;
+    bottom: 15%;
+    left: 5%;
+    right: 5%;
+    height: 12%;
+    background: linear-gradient(45deg, #FFFFFF 0%, #F8F9FA 100%);
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    z-index: 2;
+}
+
+/* Kitchen Wall */
+.kitchen-background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, #F8F9FA 0%, #E9ECEF 100%);
+    z-index: 1;
+}
+
+/* Kitchen Elements */
+.kitchen-background .kitchen-element {
+    position: absolute;
+    z-index: 3;
+}
+
+/* Bar Stools */
+.kitchen-background .stool {
+    position: absolute;
+    bottom: 8%;
+    width: 60px;
+    height: 80px;
+    background: linear-gradient(45deg, #FFFFFF 0%, #F8F9FA 100%);
+    border-radius: 50% 50% 0 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.kitchen-background .stool:nth-child(1) { left: 15%; }
+.kitchen-background .stool:nth-child(2) { left: 25%; }
+.kitchen-background .stool:nth-child(3) { left: 35%; }
+.kitchen-background .stool:nth-child(4) { left: 45%; }
+
+/* Kitchen Appliances */
+.kitchen-background .appliance {
+    position: absolute;
+    background: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.kitchen-background .refrigerator {
+    top: 20%;
+    right: 10%;
+    width: 80px;
+    height: 120px;
+    background: linear-gradient(45deg, #F8F9FA 0%, #E9ECEF 100%);
+}
+
+.kitchen-background .microwave {
+    top: 25%;
+    right: 25%;
+    width: 60px;
+    height: 40px;
+    background: #FFFFFF;
+}
+
+.kitchen-background .blender {
+    top: 35%;
+    right: 20%;
+    width: 40px;
+    height: 50px;
+    background: #FFFFFF;
+}
+
+.kitchen-background .coffee-maker {
+    top: 45%;
+    right: 30%;
+    width: 50px;
+    height: 35px;
+    background: #FFFFFF;
+}
+
+/* Kitchen Cabinets */
+.kitchen-background .cabinet {
+    position: absolute;
+    background: linear-gradient(45deg, #8B7355 0%, #A0522D 100%);
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.kitchen-background .cabinet:nth-child(5) {
+    top: 15%;
+    left: 10%;
+    width: 120px;
+    height: 40px;
+}
+
+.kitchen-background .cabinet:nth-child(6) {
+    top: 15%;
+    left: 35%;
+    width: 100px;
+    height: 40px;
+}
+
+.kitchen-background .cabinet:nth-child(7) {
+    top: 15%;
+    left: 60%;
+    width: 80px;
+    height: 40px;
+}
+
+/* Stovetop */
+.kitchen-background .stovetop {
+    position: absolute;
+    bottom: 28%;
+    right: 15%;
+    width: 100px;
+    height: 60px;
+    background: #2C2C2C;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.kitchen-background .burner {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #4A4A4A;
+    border-radius: 50%;
+    border: 2px solid #666;
+}
+
+.kitchen-background .burner:nth-child(1) { top: 10px; left: 15px; }
+.kitchen-background .burner:nth-child(2) { top: 10px; right: 15px; }
+.kitchen-background .burner:nth-child(3) { bottom: 10px; left: 15px; }
+.kitchen-background .burner:nth-child(4) { bottom: 10px; right: 15px; }
+
+/* Faucet */
+.kitchen-background .faucet {
+    position: absolute;
+    bottom: 28%;
+    left: 20%;
+    width: 8px;
+    height: 40px;
+    background: linear-gradient(45deg, #C0C0C0 0%, #A0A0A0 100%);
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.kitchen-background .faucet::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -6px;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(45deg, #C0C0C0 0%, #A0A0A0 100%);
+    border-radius: 50%;
+}
+
+/* Decorative Elements */
+.kitchen-background .bowl {
+    position: absolute;
+    bottom: 22%;
+    left: 30%;
+    width: 40px;
+    height: 20px;
+    background: linear-gradient(45deg, #8B4513 0%, #A0522D 100%);
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Lighting */
+.kitchen-background .light {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 20px;
+    background: linear-gradient(45deg, #FFD700 0%, #FFA500 100%);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .hero-container {
+        flex-direction: column;
+        height: auto;
+        min-height: 100vh;
+    }
+    
+    .search-form {
+        border-radius: 20px 20px 0 0;
+        padding: 40px 30px;
+    }
+    
+    .hero-image {
+        border-radius: 0 0 20px 20px;
+        height: 300px;
+    }
+    
+    .search-form h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .search-form {
+        padding: 30px 20px;
+    }
+    
+    .search-form h1 {
+        font-size: 1.8rem;
+    }
+    
+    .date-group,
+    .guests-group {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .hero-image {
+        height: 200px;
+    }
+}
+
+/* Header adjustments for the new design */
+header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(221, 221, 221, 0.3);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #FF385C;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #E31C5F;
+} 
