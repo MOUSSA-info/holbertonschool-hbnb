@@ -291,7 +291,7 @@
     height: 40px;
     background: linear-gradient(45deg, #C0C0C0 0%, #A0A0A0 100%);
     border-radius: 4px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(68, 12, 12, 0.1);
 }
 
 .kitchen-background .faucet::after {

@@ -1,7 +1,7 @@
 /* Base Styles */
 :root {
-    --primary-color: #FF5A5F;
-    --secondary-color: #00A699;
+    --primary-color: #ff5ac5;
+    --secondary-color: #1a7d74;
     --dark-color: #484848;
     --light-color: #f7f7f7;
     --border-color: #DDDDDD;
@@ -335,7 +335,7 @@ nav a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .place-header h1 {
