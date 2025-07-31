@@ -2,28 +2,51 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Connexion</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bienvenue - Liste des lieux</title>
+  <link rel="stylesheet" href="css/main.css" /> <!-- ton CSS modulaire avancé -->
+  <!-- Ajoute une police Google pour un rendu plus moderne -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
 </head>
-<body>
-  <header>
-    <img src="images/logo.png" alt="Logo" class="logo" />
-    <a href="index.html" class="login-button">Connexion</a>
-  </header>
+<body class="flex flex-col min-h-screen bg-gray-50 font-sans text-gray-700">
 
-  <main>
-    <form id="login-form">
-      <input type="email" name="email" placeholder="Email" required />
-      <input type="password" name="password" placeholder="Mot de passe" required />
-      <button type="submit">Se connecter</button>
-    </form>
-  </main>
+<header class="sticky top-0 z-50 bg-gradient-to-r from-purple-600 to-indigo-600 shadow-md p-6 flex items-center justify-between">
+  <div class="flex items-center gap-4">
+    <img src="images/logo.png" alt="Logo" class="h-12 w-auto" />
+    <h1 class="text-2xl font-semibold text-white">Liste des lieux</h1>
+  </div>
+  <nav>
+    <a href="index.html" id="login-link" class="btn btn-secondary text-white">Se connecter</a>
+  </nav>
+</header>
 
-  <footer>
-    <p>© 2025 - Tous droits réservés</p>
-  </footer>
+<main class="flex-1 container mx-auto px-4 py-8">
+  <!-- Barre de filtre avancée -->
+  <section class="mb-8">
+    <div class="flex items-center space-x-4">
+      <label for="price-filter" class="font-semibold">Filtrer par prix :</label>
+      <select id="price-filter" class="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400 transition">
+        <option value="all">Tous</option>
+        <option value="10">Jusqu'à 10€</option>
+        <option value="50">Jusqu'à 50€</option>
+        <option value="100">Jusqu'à 100€</option>
+      </select>
+    </div>
+  </section>
 
-  <script src="js/auth.js"></script>
+  <!-- Conteneur dynamique pour la liste -->
+  <section id="places-container" class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+    <!-- Les cartes s'afficheront ici avec JS -->
+  </section>
+</main>
+
+<footer class="bg-gray-800 text-gray-200 text-center p-4 mt-auto">
+  &copy; 2025 - Tous droits réservés
+</footer>
+
+<!-- Scripts JS -->
+<script src="js/auth.js"></script>
+<script src="js/places.js"></script>
+
 </body>
 </html>
-
