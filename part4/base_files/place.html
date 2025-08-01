@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Details</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="images/logo.png" alt="Logo" class="logo">
+        <a href="login.html" class="login-button">Login</a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="place-details">
+            <div class="place-info">
+                <h2>Cozy Cabin</h2>
+                <p>Host: Alice</p>
+                <p>Price: $120 per night</p>
+                <p>Description: A cozy retreat in the woods.</p>
+                <p>Amenities: Wi-Fi, Fireplace, Hot tub</p>
+            </div>
+        </section>
+
+        <section id="reviews">
+            <h2>Reviews</h2>
+            <div class="review-card">
+                <p>"Wonderful stay!"</p>
+                <small>- John Doe, Rating: 5/5</small>
+            </div>
+            <div class="review-card">
+                <p>"Very relaxing and clean."</p>
+                <small>- Jane Smith, Rating: 4/5</small>
+            </div>
+        </section>
+
+        <section class="add-review form">
+            <h2>Add a Review</h2>
+            <form id="review-form">
+                <label for="review-text">Review:</label>
+                <textarea id="review-text" name="review-text" required></textarea>
+
+                <label for="rating">Rating (1–5):</label>
+                <input type="number" id="rating" name="rating" min="1" max="5" required>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>All rights reserved.</p>
+    </footer>
+
+    <script src="place.js"></script>
+</body>
+</html>
