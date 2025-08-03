@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HBNB -  A VOUS DE CHOISIR LES MEILEURS LOGEMENTS</title>
-    
+    <title>HBNB -  A VOUS DE CHOISIR LES MEILLEURS LOGEMENTS</title>
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
@@ -12,7 +11,16 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/modern-style.css">
+    <style>
+        .destination-card {
+            height: 300px !important;
+        }
+        .destination-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -22,27 +30,15 @@
                 <img src="images/logo.png" alt="HBNB" height="40" class="me-2">
                 <span class="fw-bold text-primary">HBNB</span>
             </a>
-            
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#"><i class="bi bi-house-door me-1"></i>Accueil</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="bi bi-search me-1"></i>Explorer</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="bi bi-heart me-1"></i>Favoris</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="btn btn-primary rounded-pill px-4" href="login.html">
-                            <i class="bi bi-person-circle me-1"></i>Connexion
-                        </a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link active" href="#"><i class="bi bi-house-door me-1"></i>Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-search me-1"></i>Explorer</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-heart me-1"></i>Favoris</a></li>
+                    <li class="nav-item"><a class="btn btn-primary rounded-pill px-4" href="login.html"><i class="bi bi-person-circle me-1"></i>Connexion</a></li>
                 </ul>
             </div>
         </div>
@@ -50,11 +46,7 @@
 
     <!-- Hero Section -->
     <section class="hero-section vh-100 d-flex align-items-center position-relative overflow-hidden">
-        <!-- Background Video/Image -->
-        <div class="hero-background position-absolute w-100 h-100">
-            <div class="kitchen-showcase"></div>
-        </div>
-        
+        <div class="hero-background position-absolute w-100 h-100"><div class="kitchen-showcase"></div></div>
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
@@ -65,8 +57,6 @@
                         <p class="lead text-muted mb-4">
                             Découvrez des logements du jamais vu en location et cela reste durant votre séjour.
                         </p>
-                        
-                        <!-- Search Form -->
                         <form class="search-form">
                             <div class="row g-3">
                                 <div class="col-12">
@@ -75,21 +65,18 @@
                                         <label for="address"><i class="bi bi-geo-alt me-2"></i>Destination</label>
                                     </div>
                                 </div>
-                                
                                 <div class="col-md-6">
                                     <div class="form-floating">
                                         <input type="date" class="form-control" id="arrival">
                                         <label for="arrival"><i class="bi bi-calendar-check me-2"></i>Arrivée</label>
                                     </div>
                                 </div>
-                                
                                 <div class="col-md-6">
                                     <div class="form-floating">
                                         <input type="date" class="form-control" id="departure">
                                         <label for="departure"><i class="bi bi-calendar-x me-2"></i>Départ</label>
                                     </div>
                                 </div>
-                                
                                 <div class="col-md-6">
                                     <div class="form-floating">
                                         <select class="form-select" id="adults">
@@ -102,7 +89,6 @@
                                         <label for="adults"><i class="bi bi-person me-2"></i>Adultes</label>
                                     </div>
                                 </div>
-                                
                                 <div class="col-md-6">
                                     <div class="form-floating">
                                         <select class="form-select" id="children">
@@ -115,7 +101,6 @@
                                         <label for="children"><i class="bi bi-emoji-smile me-2"></i>Enfants</label>
                                     </div>
                                 </div>
-                                
                                 <div class="col-12">
                                     <button type="submit" class="btn btn-primary btn-lg w-100 rounded-pill py-3">
                                         <i class="bi bi-search me-2"></i>Rechercher des logements
@@ -125,16 +110,11 @@
                         </form>
                     </div>
                 </div>
-                
                 <div class="col-lg-6 d-none d-lg-block">
                     <div class="kitchen-preview position-relative h-100">
-                        <!-- Modern Kitchen Elements -->
                         <div class="kitchen-island"></div>
                         <div class="kitchen-stools">
-                            <div class="stool"></div>
-                            <div class="stool"></div>
-                            <div class="stool"></div>
-                            <div class="stool"></div>
+                            <div class="stool"></div><div class="stool"></div><div class="stool"></div><div class="stool"></div>
                         </div>
                         <div class="kitchen-appliances">
                             <div class="appliance fridge"></div>
@@ -156,7 +136,6 @@
                     <p class="lead text-muted">Choisis parmi tant des logements uniques</p>
                 </div>
             </div>
-            
             <div class="row g-4">
                 <div class="col-md-4">
                     <div class="card border-0 shadow-sm h-100">
@@ -169,7 +148,6 @@
                         </div>
                     </div>
                 </div>
-                
                 <div class="col-md-4">
                     <div class="card border-0 shadow-sm h-100">
                         <div class="card-body text-center p-4">
@@ -181,7 +159,6 @@
                         </div>
                     </div>
                 </div>
-                
                 <div class="col-md-4">
                     <div class="card border-0 shadow-sm h-100">
                         <div class="card-body text-center p-4">
@@ -203,16 +180,14 @@
             <div class="row text-center mb-5">
                 <div class="col-lg-8 mx-auto">
                     <h2 class="display-5 fw-bold text-dark mb-3">Destinations populaires</h2>
-                    <p class="lead text-muted">Découvrez nos destinations les plus récent</p>
+                    <p class="lead text-muted">Découvrez nos destinations les plus récentes</p>
                 </div>
             </div>
-            
             <div class="row g-4">
                 <!-- PARIS -->
                 <div class="col-md-6 col-lg-3">
-                    <div class="destination-card position-relative rounded-4 overflow-hidden shadow-sm" style="height:300px;">
-                        <img src="https://images.unsplash.com/photo-1502602898534-861b3e3c1bca?w=400&h=300&fit=crop"
-                            alt="Paris" class="w-100 h-100 object-fit-cover">
+                    <div class="destination-card position-relative rounded-4 overflow-hidden shadow-sm">
+                        <img src="https://via.placeholder.com/400x300?text=Paris" alt="Paris">
                         <div class="destination-overlay d-flex align-items-end p-3">
                             <div class="text-white">
                                 <h6 class="fw-bold mb-1">PARIS</h6>
@@ -223,8 +198,8 @@
                 </div>
                 <!-- NDJAMÉNA -->
                 <div class="col-md-6 col-lg-3">
-                    <div class="destination-card position-relative rounded-4 overflow-hidden shadow-sm" style="height:300px;">
-                        <img src="https://images.unsplash.com/photo-1538970272646-f61fabb3a8a2?w=400&h=300&fit=crop" alt="Ndjamena" class="w-100 h-100 object-fit-cover">
+                    <div class="destination-card position-relative rounded-4 overflow-hidden shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1538970272646-f61fabb3a8a2?w=400&h=300&fit=crop" alt="Ndjamena">
                         <div class="destination-overlay d-flex align-items-end p-3">
                             <div class="text-white">
                                 <h6 class="fw-bold mb-1">NDJAMÉNA</h6>
@@ -235,8 +210,8 @@
                 </div>
                 <!-- TORONTO -->
                 <div class="col-md-6 col-lg-3">
-                    <div class="destination-card position-relative rounded-4 overflow-hidden shadow-sm" style="height:300px;">
-                        <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400&h=300&fit=crop" alt="Toronto" class="w-100 h-100 object-fit-cover">
+                    <div class="destination-card position-relative rounded-4 overflow-hidden shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400&h=300&fit=crop" alt="Toronto">
                         <div class="destination-overlay d-flex align-items-end p-3">
                             <div class="text-white">
                                 <h6 class="fw-bold mb-1">TORONTO</h6>
@@ -247,8 +222,8 @@
                 </div>
                 <!-- LONDRES -->
                 <div class="col-md-6 col-lg-3">
-                    <div class="destination-card position-relative rounded-4 overflow-hidden shadow-sm" style="height:300px;">
-                        <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=400&h=300&fit=crop" alt="Londres" class="w-100 h-100 object-fit-cover">
+                    <div class="destination-card position-relative rounded-4 overflow-hidden shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=400&h=300&fit=crop" alt="Londres">
                         <div class="destination-overlay d-flex align-items-end p-3">
                             <div class="text-white">
                                 <h6 class="fw-bold mb-1">Londres</h6>
@@ -275,7 +250,6 @@
                         <a href="#" class="text-muted"><i class="bi bi-linkedin fs-5"></i></a>
                     </div>
                 </div>
-                
                 <div class="col-lg-2 col-md-6">
                     <h6 class="fw-bold mb-3">Découvrir</h6>
                     <ul class="list-unstyled">
@@ -285,7 +259,6 @@
                         <li><a href="#" class="text-muted text-decoration-none">Aventures</a></li>
                     </ul>
                 </div>
-                
                 <div class="col-lg-2 col-md-6">
                     <h6 class="fw-bold mb-3">Support</h6>
                     <ul class="list-unstyled">
@@ -295,7 +268,6 @@
                         <li><a href="#" class="text-muted text-decoration-none">Assistance</a></li>
                     </ul>
                 </div>
-                
                 <div class="col-lg-2 col-md-6">
                     <h6 class="fw-bold mb-3">Entreprise</h6>
                     <ul class="list-unstyled">
@@ -305,7 +277,6 @@
                         <li><a href="#" class="text-muted text-decoration-none">Blog</a></li>
                     </ul>
                 </div>
-                
                 <div class="col-lg-2 col-md-6">
                     <h6 class="fw-bold mb-3">Légal</h6>
                     <ul class="list-unstyled">
@@ -316,9 +287,7 @@
                     </ul>
                 </div>
             </div>
-            
             <hr class="my-4">
-            
             <div class="row align-items-center">
                 <div class="col-md-6">
                     <p class="text-muted mb-0">&copy; 2025 HBNB. Tous droits réservés.</p>
