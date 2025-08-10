@@ -1,4 +1,6 @@
-// Fonction pour récupérer la valeur d'un cookie par son nom
+const API_URL = 'http://localhost:5000/api/v1/';
+
+// ---- Fonction utilitaire : récupérer un cookie ----
 function getCookie(name) {
   const matches = document.cookie.match(
     new RegExp('(?:^|; )' + name.replace(/([.$?*|{}()[\]\\/+^])/g, '\\$1') + '=([^;]*)')
@@ -6,7 +8,7 @@ function getCookie(name) {
   return matches ? decodeURIComponent(matches[1]) : undefined;
 }
 
-// Fonction principale pour gérer l'état d'authentification et déclencher fetch + affichage
+// ---- Vérifie auth et démarre chargement ----
 function checkAuthentication() {
   const token = getCookie('token');
   const loginLink = document.getElementById('login-link');
@@ -19,12 +21,12 @@ function checkAuthentication() {
   }
 }
 
-let placesData = []; // On conserve la liste complète pour filtrage client
+let placesData = [];
 
-// Fonction pour récupérer la liste des lieux depuis l'API
+// ---- Récupération des lieux ----
 async function fetchPlaces(token) {
   try {
-    const response = await fetch('http://localhost:5000/api/places', {
+    const response = await fetch(API_URL + 'places', {
       headers: { Authorization: `Bearer ${token}` }
     });
 
@@ -33,17 +35,17 @@ async function fetchPlaces(token) {
     }
 
     const data = await response.json();
-    placesData = data;  // Sauvegarde pour filtrage client
+    placesData = data;
     displayPlaces(data);
   } catch (error) {
     alert(error.message);
   }
 }
 
-// Fonction pour afficher la liste des lieux dans le DOM
+// ---- Affichage des lieux ----
 function displayPlaces(places) {
   const container = document.getElementById('places-list');
-  container.innerHTML = ''; // Nettoyer avant affichage
+  container.innerHTML = '';
 
   if (places.length === 0) {
     container.innerHTML = '<p>Aucun lieu à afficher.</p>';
@@ -53,7 +55,7 @@ function displayPlaces(places) {
   places.forEach(place => {
     const card = document.createElement('div');
     card.classList.add('place-card');
-    card.dataset.price = place.price; // stockage direct du prix pour filtrage
+    card.dataset.price = place.price;
 
     card.innerHTML = `
       <h3>${place.name}</h3>
@@ -65,7 +67,7 @@ function displayPlaces(places) {
   });
 }
 
-// Filtrage client basé sur la sélection du prix max
+// ---- Filtre prix ----
 function setupPriceFilter() {
   const filterSelect = document.getElementById('price-filter');
   filterSelect.addEventListener('change', () => {
@@ -74,16 +76,12 @@ function setupPriceFilter() {
 
     placeCards.forEach(card => {
       const price = parseFloat(card.dataset.price);
-      if (maxPrice === 'all' || price <= maxPrice) {
-        card.style.display = 'block';
-      } else {
-        card.style.display = 'none';
-      }
+      card.style.display = (maxPrice === 'all' || price <= maxPrice) ? 'block' : 'none';
     });
   });
 }
 
-// Initialisation complète lorsque le DOM est prêt
+// ---- Démarrage ----
 document.addEventListener('DOMContentLoaded', () => {
   checkAuthentication();
   setupPriceFilter();

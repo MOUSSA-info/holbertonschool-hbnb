@@ -117,7 +117,7 @@
 .search-button:hover {
     background: linear-gradient(135deg, #E31C5F 0%, #D70466 100%);
     transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(255, 56, 92, 0.3);
+    box-shadow: 0 10px 25px rgba(212, 16, 52, 0.3);
 }
 
 /* Hero Image Styles */
@@ -147,7 +147,7 @@
     left: 5%;
     right: 5%;
     height: 12%;
-    background: linear-gradient(45deg, #FFFFFF 0%, #F8F9FA 100%);
+    background: linear-gradient(45deg, #fffefe 0%, #F8F9FA 100%);
     border-radius: 15px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
     z-index: 2;
